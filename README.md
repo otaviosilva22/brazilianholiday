@@ -14,7 +14,7 @@ npm install brazilianholliday --save
 > Verifica se data é um feriado nacional.
 
 ~~~javascript
-const brazilianHolidays = require('brazilian-holidays');
+const {brazilianHoliday} = require('brazilian-holidays');
 
 let date = '01/01/2023';
 
