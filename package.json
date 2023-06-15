@@ -1,0 +1,19 @@
+{
+  "name": "brazilian-holidays",
+  "version": "1.0.0",
+  "description": "Biblioteca para feriados brasileiros no âmbito nacional e estadual",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otaviosilva22/brazilian-holidays.git"
+  },
+  "author": "Otávio Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/otaviosilva22/brazilian-holidays/issues"
+  },
+  "homepage": "https://github.com/otaviosilva22/brazilian-holidays#readme"
+}

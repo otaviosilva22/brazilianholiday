@@ -1,0 +1,314 @@
+{
+    "national": [
+        {
+            "date": "01/01",
+            "description": "Confraternização Universal"
+        },
+        {
+            "date": "21/04",
+            "description": "Tiradentes"
+        },
+        {
+            "date": "01/05",
+            "description": "Dia do Trabalhador"
+        },
+        {
+            "date": "07/09",
+            "description": "Independência do Brasil"
+        },
+        {
+            "date": "12/10",
+            "description": "Nossa Senhora Aparecida"
+        },
+        {
+            "date": "02/11",
+            "description": "Finados"
+        },
+        {
+            "date": "25/12",
+            "description": "Natal"
+        }
+    ],
+    "state": [
+        {
+            "uf": "AC",
+            "hollidays": [
+                {
+                    "date": "20/01",
+                    "description": "Dia do Católico"
+                },
+                {
+                    "date": "25/01",
+                    "description": "Dia do Evangélico"
+                },
+                {
+                    "date": "15/07",
+                    "description": "Aniversário do Estado do Acre"
+                },
+                {
+                    "date": "05/07",
+                    "description": "Dia da Amazônia"
+                },
+                {
+                    "date": "17/11",
+                    "description": "Tratado de Pretrópolis"
+                }
+            ]
+        },
+        {
+            "uf": "AL",
+            "hollidays": [
+                {
+                    "date": "24/06",
+                    "description": "Dia de São João"
+                },
+                {
+                    "date": "29/07",
+                    "description": "Dia de São Pedro"
+                },
+                {
+                    "date": "16/09",
+                    "description": "Emancipação Política de Alagoas"
+                },
+                {
+                    "date": "20/11",
+                    "description": "Dia da Consciência Negra"
+                }
+            ]
+        },
+        {
+            "uf": "BA",
+            "holidays": [
+                {
+                    "date": "02/07",
+                    "description": "Independência do Estado da Bahia"
+                }
+            ]
+        },
+        {
+            "uf": "CE",
+            "holidays": [
+                {
+                    "date": "19/03",
+                    "description": "Dia de São José"
+                },
+                {
+                    "date": "25/03",
+                    "description": "Data Magna do Ceará"
+                }
+            ]
+        },
+        {
+            "uf": "DF",
+            "holidays": [
+                {
+                    "date": "21/04",
+                    "description": "Fundação de Brasília"
+                },
+                {
+                    "date": "30/11",
+                    "description": "Dia do Evangélico"
+                }
+            ]
+        },
+        {
+            "uf": "ES",
+            "holidays": [
+                {
+                    "date": "28/10",
+                    "description": "Dia do Servidor Público"
+                }
+            ]
+        },
+        {
+            "uf": "GO",
+            "holidays": []
+        },
+        {
+            "uf": "MA",
+            "holidays": [
+                {
+                    "date": "28/07",
+                    "description": "Dia da Adesão do Maranhão à Independência do Brasil"
+                }
+            ]
+        },
+        {
+            "uf": "MT",
+            "holidays": [
+                {
+                    "date": "20/11",
+                    "description": "Dia da Consciência Negra"
+                }
+            ]
+        },
+        {
+            "uf": "MS",
+            "holidays": [
+                {
+                    "date": "11/10",
+                    "description": "Criação do Estado do Mato Grosso do Sul"
+                }
+            ]
+        },
+        {
+            "uf": "MG",
+            "holidays": [
+                {
+                    "date": "21/04",
+                    "description": "Data Magna de Minas Gerais"
+                }
+            ]
+        },
+        {
+            "uf": "PA",
+            "holidays": [
+                {
+                    "date": "15/08",
+                    "description": "Adesão do Grão-Pará à independência do Brasil"
+                }                
+            ]
+        },
+        {
+            "uf": "PB",
+            "holidays": [
+                {
+                    "date": "05/08",
+                    "description": "Fundação do Estado da Paraíba"
+                }
+            ]
+        },
+        {
+            "uf": "PR",
+            "holidays": []
+        },
+        {
+            "uf": "PE",
+            "holidays": [
+                {
+                    "date": "06/03",
+                    "description": "Data Magna do Estado de Pernambuco"
+                },
+                {
+                    "date": "24/06",
+                    "description": "Dia de São João"
+                }
+            ]
+        },
+        {
+            "uf": "PI",
+            "holidays": [
+                {
+                    "date": "13/03",
+                    "description": "Dia da Batalha do Jenipapo"
+                },
+                {
+                    "date": "19/10",
+                    "description": "Dia do Piauí"
+                }
+            ]
+        },
+        {
+            "uf": "RJ",
+            "holidays": [
+                {
+                    "date": "23/04",
+                    "description": "Dia de São Jorge"
+                },
+                {
+                    "date": "EXCEPTION",
+                    "description": "Dia do Comércio",
+                    "note": "3º segunda-feira de outubro"
+                },
+                {
+                    "date": "20/11",
+                    "description": "Dia da Consciência Negra"
+                }
+            ]
+        },
+        {
+            "uf": "RN",
+            "holidays": [
+                {
+                    "date": "29/06",
+                    "description": "Dia de São Pedro"
+                },
+                {
+                    "date": "03/10",
+                    "description": "Mártires de Cunhaú e Uruaçu"
+                }
+            ]
+        },
+        {
+            "uf": "RS",
+            "holidays": [
+                {
+                    "date": "20/07",
+                    "description": "Revolução Farroupilha (Dia do Gaúcho)"
+                }
+            ]
+        },
+        {
+            "uf": "RO",
+            "holidays": [
+                {
+                    "date": "04/01",
+                    "description": "Criação do Estado de Rondônia"
+                }
+            ]
+        },
+        {
+            "uf": "RR",
+            "holidays": [
+                {
+                    "date": "05/10",
+                    "description": "Criação de Roraima"
+                }
+            ]
+        },
+        {
+            "uf": "SC",
+            "holidays": [
+                {
+                    "date": "11/08",
+                    "description": "Dia do Estado de Santa Catarina (este feriado foi transferido, por lei, para o domingo subsequente)"
+                }
+            ]
+        },
+        {
+            "uf": "SP",
+            "holidays": [
+                {
+                    "date": "09/07",
+                    "description": "Revolução Constitucionalista de 1932"
+                }
+            ]
+        },
+        {
+            "uf": "SE",
+            "holidays": [
+                {
+                    "date": "08/07",
+                    "description": "Emancipação política de Sergipe"
+                }
+            ]
+        },
+        {
+            "uf": "TO",
+            "holidays": [
+                {
+                    "date": "01/01",
+                    "description": "Instalação de Tocantins"
+                },
+                {
+                    "date": "08/07",
+                    "description": "Nossa Senhora da Natividade"
+                },
+                {
+                    "date": "05/10",
+                    "description": "Criação de Tocantins"
+                }
+            ]
+        }
+    ]
+}
