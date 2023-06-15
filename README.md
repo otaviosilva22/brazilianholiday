@@ -1,4 +1,4 @@
-# Feriados Brasileiros
+# Brazilian Holiday
 
 Simples biblioteca que retorna se determinada data é feriado.
 
