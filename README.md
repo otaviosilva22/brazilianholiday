@@ -1,7 +1,6 @@
-# Brazilian Holidays
-> Feriados Brasileiros
+# Feriados Brasileiros
 
-Simples biblioteca que retorna se determinada data é um feriado ou não.
+Simples biblioteca que retorna se determinada data é feriado.
 
 ## Instalação
 
