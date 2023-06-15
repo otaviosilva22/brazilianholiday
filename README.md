@@ -5,7 +5,7 @@ Simples biblioteca que retorna se determinada data é feriado.
 ## Instalação
 
 ```sh
-npm install brazilian-hollidays --save
+npm install brazilianholliday --save
 ```
 
 ## Exemplo de Uso
