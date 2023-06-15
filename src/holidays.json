@@ -32,7 +32,7 @@
     "state": [
         {
             "uf": "AC",
-            "hollidays": [
+            "holidays": [
                 {
                     "date": "20/01",
                     "description": "Dia do Católico"
@@ -57,7 +57,7 @@
         },
         {
             "uf": "AL",
-            "hollidays": [
+            "holidays": [
                 {
                     "date": "24/06",
                     "description": "Dia de São João"

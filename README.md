@@ -10,7 +10,7 @@ npm install brazilianholliday --save
 
 ## Exemplo de Uso
 
-### isNational()
+### isNational(date)
 > Verifica se data é um feriado nacional.
 
 ~~~javascript
@@ -26,14 +26,32 @@ console.log(brazilianHolidays.isNational(date));
     description: "Confraternização Universal"
 }
 */
-
 ~~~
 
+### isState(date, uf)
+> Verifica se data é um feriado estadual
+
+~~~javascript
+const {brazilianHoliday} = require('brazilianholiday');
+
+let date = '21/04/2023';
+
+console.log(brazilianHolidays.isState(date, 'MG'));
+/*
+{
+    holiday: true,
+    date: '21/04/2023',
+    description: 'Data Magna de Minas Gerais'
+}
+*/
+~~~
 
 ## Histórico de Versões
 
 * 1.0
     * FEAT: function isNational
+* 1.0.4
+    * FEAT: function isState
 
 ## Contribuidor:
 
