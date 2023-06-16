@@ -5,7 +5,7 @@ Simples biblioteca que retorna se determinada data é feriado.
 ## Instalação
 
 ```sh
-npm install brazilianholliday --save
+npm install brazilianholiday --save
 ```
 
 ## Exemplo de Uso
@@ -22,7 +22,7 @@ console.log(brazilianHolidays.isNational(date));
 /*
 {
     holiday: true,
-    date: "01/01",
+    date: "01/01/2023",
     description: "Confraternização Universal"
 }
 */
