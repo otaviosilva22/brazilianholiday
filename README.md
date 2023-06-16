@@ -60,7 +60,7 @@ console.log(brazilianHoliday.isHoliday(date, 'AC'));
 
 ## Histórico de Versões
 
-* 1.0.6
+* 1.0.8 [ESTÁVEL]
     * FEAT: function isHoliday
 
 ## Como Contribuir
