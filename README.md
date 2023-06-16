@@ -10,51 +10,89 @@ npm install brazilianholiday --save
 
 ## Exemplo de Uso
 
-### isNational(date)
-> Verifica se data é um feriado nacional.
+### isHoliday(date, uf = null)
+> Verifica se data é um feriado
+
+~~~javascript
+//PARÂMETROS
+
+date
+- required: true
+- type: string
+- format: 'DD/MM/YYYY'
+
+uf
+- required: false
+- type: string
+- format: 'XX'
+
+~~~
 
 ~~~javascript
 const {brazilianHoliday} = require('brazilianholiday');
 
 let date = '01/01/2023';
 
-console.log(brazilianHolidays.isNational(date));
+console.log(brazilianHolidays.isHoliday(date));
+
 /*
 {
-    holiday: true,
-    date: "01/01/2023",
-    description: "Confraternização Universal"
+  holiday: true,
+  date: '01/01/2023',
+  description: 'Confraternização Universal',
+  state: false
 }
 */
-~~~
 
-### isState(date, uf)
-> Verifica se data é um feriado estadual
+date = '20/01/2023';
 
-~~~javascript
-const {brazilianHoliday} = require('brazilianholiday');
+console.log(brazilianHolidays.isHoliday(date, 'AC'));
 
-let date = '21/04/2023';
-
-console.log(brazilianHolidays.isState(date, 'MG'));
 /*
 {
-    holiday: true,
-    date: '21/04/2023',
-    description: 'Data Magna de Minas Gerais'
+  holiday: true,
+  date: '20/01/2023',
+  description: 'Dia do Católico',
+  state: true
 }
 */
+
+
 ~~~
 
 ## Histórico de Versões
 
-* 1.0
-    * FEAT: function isNational
-* 1.0.4
-    * FEAT: function isState
+* 1.0.6
+    * FEAT: function isHoliday
 
-## Contribuidor:
+## Como Contribuir
 
-Otávio Silva.
+Ajude-nos alimentando o arquivo .json com feriados móveis que variam a cada ano.
+
+~~~json
+"moveable": [
+        {
+            "year": "2024",
+            "holidays": [
+                {
+                    "date": "12/02",
+                    "description": "Carnaval"
+                },
+                {
+                    "date": "13/02",
+                    "description": "Carnaval"
+                },
+                {
+                    "date": "29/03",
+                    "description": "Paixão de Cristo"
+                }
+            ]
+        }
+    ]
+~~~
+
+## License:
+
+MIT © Otávio Silva 2023
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/otaviosilva22/)](https://www.linkedin.com/in/otaviosilva22/)

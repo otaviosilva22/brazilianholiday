@@ -1,4 +1,23 @@
 {
+    "moveable": [
+        {
+            "year": "2024",
+            "holidays": [
+                {
+                    "date": "12/02",
+                    "description": "Carnaval"
+                },
+                {
+                    "date": "13/02",
+                    "description": "Carnaval"
+                },
+                {
+                    "date": "29/03",
+                    "description": "Paixão de Cristo"
+                }
+            ]
+        }
+    ],
     "national": [
         {
             "date": "01/01",
@@ -153,12 +172,7 @@
         },
         {
             "uf": "MG",
-            "holidays": [
-                {
-                    "date": "21/04",
-                    "description": "Data Magna de Minas Gerais"
-                }
-            ]
+            "holidays": []
         },
         {
             "uf": "PA",
