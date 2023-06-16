@@ -33,27 +33,25 @@ const {brazilianHoliday} = require('brazilianholiday');
 
 let date = '01/01/2023';
 
-console.log(brazilianHolidays.isHoliday(date));
+console.log(brazilianHoliday.isHoliday(date));
 
 /*
 {
   holiday: true,
-  date: '01/01/2023',
   description: 'Confraternização Universal',
-  state: false
+  date: '01/01/2024'
 }
 */
 
 date = '20/01/2023';
 
-console.log(brazilianHolidays.isHoliday(date, 'AC'));
+console.log(brazilianHoliday.isHoliday(date, 'AC'));
 
 /*
-{
-  holiday: true,
-  date: '20/01/2023',
-  description: 'Dia do Católico',
-  state: true
+{ 
+    holiday: true, 
+    description: 'Dia do Católico', 
+    date: '20/01/2024' 
 }
 */
 
@@ -91,7 +89,7 @@ Ajude-nos alimentando o arquivo .json com feriados móveis que variam a cada ano
     ]
 ~~~
 
-## License:
+## Licença:
 
 MIT © Otávio Silva 2023
 

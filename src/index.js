@@ -5,94 +5,137 @@ function UserException(message){
     this.name = "UserException"
 }
 
-function validate({day, month, year}){
+function validate(date){
 
-    if(day.length != 2 || month.length != 2 || year.length != 4){
+    let regex = /^(\d{2})\/(\d{2})\/(\d{4})$/.test(date);
+
+    if (!regex)
         return false;
-    }
 
     return true;
 }
 
 function formatDate(date){
-    
-    let splitDate = date.split('/');
 
-    let dateFormated = new Date(`${splitDate[2]}-${splitDate[1]}-${splitDate[0]}T03:00:00`);
+    const resultValidate = validate(date);
     
-    let dayNumber = dateFormated.getDate();
-    let monthNumber = dateFormated.getMonth() + 1;
-
-    let day = dayNumber < 10 ? `0${dayNumber}` : dayNumber.toString();
-    let month = monthNumber < 10 ? `0${monthNumber}` : monthNumber.toString();
-
-    let formatValid = validate({day, month, year: splitDate.pop().toString()})
+    if (!resultValidate){
+        throw new UserException('Invalid format, please use DD/MM/YYYY');
+    }
     
-    if (!formatValid || dayNumber > 31 || monthNumber > 12){
-        throw new UserException('Invalid format, please use DD/MM/YYYY format');
+    let dateSplited = date.split('/'); 
+    let dateFormated = new Date(`${dateSplited[2]}-${dateSplited[1]}-${dateSplited[0]}T03:00:00`)
+    
+    let day = dateFormated.getDate();
+    let month = dateFormated.getMonth() + 1;
+    let year = dateFormated.getFullYear();
+   
+    return {
+        day: day < 10 ? `0${day}` : day.toString(),
+        month: month < 10 ? `0${month}` : month.toString(),
+        year: year.toString()
+    }
+}
+
+function formatResponse({responseNational, responseState, responseMoveable}, date){
+
+    let holiday = false, description = false;
+    if (responseNational.holiday){
+        holiday = true,
+        description = responseNational.description;
+    }else if(responseMoveable.holiday){
+        holiday = true,
+        description = responseMoveable.description;
+    }else if(responseState.holiday){
+        holiday = true,
+        description = responseState.description;
     }
 
     return {
-        dayMonth: `${day}/${month}`,
-        year: splitDate.pop()
-    };    
+        holiday,
+        description,
+        date
+    }
 }
 
-function isNational(date){
-    let holiday = national.find(element => element.date == date.dayMonth);
+function isMoveable(date){
+    let dayMonth = `${date.day}/${date.month}`;
+
     let yearFinded = moveable.find(element => element.year == date.year);
-    
-    if (!holiday && yearFinded){
-        holiday = yearFinded.holidays.find(element => element.date == date.dayMonth);
+
+    if (!yearFinded){
+        return {
+            holiday: false,
+            description: false,
+            date            
+        }
     }
+
+    let holiday = yearFinded.holidays.find(element => element.date == dayMonth);
 
     return {
         holiday: holiday ? true : false,
-        date,
-        description: holiday ? holiday.description : false
+        description: holiday ? holiday.description : false,
+        date
+    }
+}
+
+function isNational(date){
+
+    let dayMonth = `${date.day}/${date.month}`;
+    
+    let holiday = national.find(element => element.date == dayMonth);
+
+    return {
+        holiday: holiday ? true : false,
+        description: holiday ? holiday.description : false,
+        date
     }
 }
 
 function isState(date, uf){
 
-    let ufFinded = state.find(element=> element.uf == uf);
-
-    if (!ufFinded){
-        throw new UserException('Invalid UF');
+    if (uf == null){
+        return {
+            holiday: false,
+            description: false,
+            date
+        }
     }
 
+    let ufFinded = state.find(element=> element.uf == uf);
+
     let holiday = null;
+
     if (ufFinded && ufFinded.holidays.length > 0){
-        holiday = ufFinded.holidays.find(element => element.date == date.dayMonth);      
+        let dayMonth = `${date.day}/${date.month}`;
+        holiday = ufFinded.holidays.find(element => element.date == dayMonth);      
     }
 
     return {
         holiday: holiday ? true : false,
-        date,
-        description: holiday ? holiday.description : false
+        description: holiday ? holiday.description : false,
+        date        
     }
-
 }
 
 function isHoliday(date, uf = null){
     
     try{
         let dateFormated = formatDate(date);
+        
         let responseNational = isNational(dateFormated);
-        let responseState = uf == null ? false : isState(dateFormated, uf);
+        let responseState = isState(dateFormated, uf);
+        let responseMoveable = isMoveable(dateFormated);
 
-        return {
-            holiday: responseNational.holiday || (responseState && responseState.holiday) ? true : false,
-            date,
-            description: responseNational.holiday ? responseNational.description : (responseState.holiday ? responseState.description : false),
-            state: responseNational.holiday ? false : (responseState.holiday ? true : false)
-        }
+        const response = formatResponse({responseNational, responseState, responseMoveable}, date);
+        
+        return response;
     }catch(e){
         return {
             error: e.message
         }
     }
-    
 }
 
 module.exports = {
