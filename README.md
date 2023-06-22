@@ -2,10 +2,11 @@
 
 Simples biblioteca para verificação de feriado a partir de data recebida.
 
-<img src= "https://img.shields.io/badge/status-active-green">
-<img src= "https://img.shields.io/badge/npm-1.0.9-blue">
-<img src= "https://img.shields.io/badge/tests-pass-green">
-
+<tr>
+    <td><img src= "https://img.shields.io/badge/status-active-green"></td>
+    <td><img src= "https://img.shields.io/badge/npm-1.0.9-blue"></td>
+    <td><img src= "https://img.shields.io/badge/tests-pass-green"></td>
+</tr>
 
 ## Instalação
 
