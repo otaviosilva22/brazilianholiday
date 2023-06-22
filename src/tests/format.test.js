@@ -125,7 +125,7 @@ describe('Exception error', ()=> {
         });
     });
 
-    it("Should return succes to formatResponse isMoveable", ()=>{
+    it("Should return isn't holiday to formatResponse", ()=>{
         jest.spyOn(validator, 'validate').mockImplementation(()=> {
             return true
         })

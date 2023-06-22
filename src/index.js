@@ -1,7 +1,6 @@
 const {moveable, national, state} = require('./common/holidays.json')
 const {format} = require('./common/format');
 const {verify} = require('./functions/verifyHolidays');
-const {validator} = require('./common/validator');
 
 function isHoliday(date, uf = null){
     
