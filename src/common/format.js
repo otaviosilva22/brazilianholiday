@@ -3,12 +3,12 @@ const {exception} = require('./exception');
 
 const format = {
 
-    formatDate(date){
+    formatParams(date, uf){
 
-        const resultValidate = validator.validate(date);
+        const resultValidate = validator.validate(date, uf);
         
         if (!resultValidate){
-            exception.UserException('Invalid format, please use DD/MM/YYYY');
+            exception.UserException('Invalid params');
             throw exception
         }
         
