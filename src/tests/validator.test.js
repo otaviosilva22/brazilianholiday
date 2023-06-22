@@ -10,4 +10,8 @@ describe('validator test', ()=>{
         let result = validator.validate('01/01/202');
         expect(result).toBe(false);
     })
+    it('should return false to validator', ()=>{
+        let result = validator.validate('01/01/2023', 'AB');
+        expect(result).toBe(false);
+    })
 })

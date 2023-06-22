@@ -1,6 +1,6 @@
 {
   "name": "brazilianholiday",
-  "version": "2.0",
+  "version": "2.0.0",
   "description": "Biblioteca para feriados brasileiros no âmbito nacional e estadual",
   "main": "src/index.js",
   "scripts": {

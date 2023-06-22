@@ -3,11 +3,11 @@ const {exception} = require('../common/exception');
 const {format} = require('../common/format')
 
 describe('Exception error', ()=> {
-    it("Should return success to formatDate", ()=>{
+    it("Should return success to formatParams", ()=>{
         jest.spyOn(validator, 'validate').mockImplementation(()=> {
             return true
         })
-        let result = format.formatDate('01/01/2023');
+        let result = format.formatParams('01/01/2023');
         expect(result).toEqual({
             day: '01',
             month: '01',
@@ -15,11 +15,11 @@ describe('Exception error', ()=> {
         })
     });
 
-    it("Should return success to formatDate whit date > 09", ()=>{
+    it("Should return success to formatParams whit date > 09", ()=>{
         jest.spyOn(validator, 'validate').mockImplementation(()=> {
             return true
         })
-        let result = format.formatDate('10/10/2023');
+        let result = format.formatParams('10/10/2023');
         expect(result).toEqual({
             day: '10',
             month: '10',
@@ -32,9 +32,9 @@ describe('Exception error', ()=> {
             jest.spyOn(validator, 'validate').mockImplementation(()=> {
                 return false
             })
-            let result = format.formatDate('01/01/203')
+            let result = format.formatParams('01/01/203')
         }catch(e){
-            expect(e.message).toEqual('Invalid format, please use DD/MM/YYYY');
+            expect(e.message).toEqual('Invalid params');
         } 
     });
 
@@ -125,7 +125,7 @@ describe('Exception error', ()=> {
         });
     });
 
-    it("Should return succes to formatResponse isMoveable", ()=>{
+    it("Should return isn't holiday to formatResponse", ()=>{
         jest.spyOn(validator, 'validate').mockImplementation(()=> {
             return true
         })

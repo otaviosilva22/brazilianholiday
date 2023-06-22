@@ -2,11 +2,10 @@ const {moveable, national, state} = require('./common/holidays.json')
 const {format} = require('./common/format');
 const {verify} = require('./functions/verifyHolidays');
 
-
 function isHoliday(date, uf = null){
     
     try{
-        let dateFormated = format.formatDate(date);
+        let dateFormated = format.formatParams(date, uf);
 
         let responseNational = verify.isNational(dateFormated);
         let responseState = verify.isState(dateFormated, uf);

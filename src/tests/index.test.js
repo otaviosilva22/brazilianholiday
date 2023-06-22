@@ -14,13 +14,13 @@ describe("Index tests", () =>{
 
     it("Should return a catch exception", ()=>{
         let result = brazilianHoliday.isHoliday('01/01/202'); 
-        expect(result).toEqual({error: 'Invalid format, please use DD/MM/YYYY'});
+        expect(result).toEqual({error: 'Invalid params'});
     });
 
     it ("Should return isHoliday response", ()=> {
         let date = '01/01/2023';        
         
-        jest.spyOn(format, 'formatDate').mockImplementation(()=> {
+        jest.spyOn(format, 'formatParams').mockImplementation(()=> {
             return {
                 day: '01', month: '01', year: '2023'
             }
