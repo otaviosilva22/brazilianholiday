@@ -1,10 +1,11 @@
 {
   "name": "brazilianholiday",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Biblioteca para feriados brasileiros no âmbito nacional e estadual",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/index.js",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -16,13 +17,15 @@
     "url": "https://github.com/otaviosilva22/brazilianholiday/issues"
   },
   "homepage": "https://github.com/otaviosilva22/brazilianholiday#readme",
-  "dependencies": {},
+  "dependencies": {
+    "jest": "^27.5.1"
+  },
   "keywords": [
-		"feriados",
-		"feriados-brasileiros",
-		"npm",
-		"nodejs",
-		"holiday",
-		"holidays"
-	]
+    "feriados",
+    "feriados-brasileiros",
+    "npm",
+    "nodejs",
+    "holiday",
+    "holidays"
+  ]
 }

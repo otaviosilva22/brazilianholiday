@@ -1,11 +1,16 @@
 # Brazilian Holiday
 
-Simples biblioteca que retorna se determinada data é feriado.
+Simples biblioteca para verificação de feriado a partir de data recebida.
+
+<img src= "https://img.shields.io/badge/status-active-green">
+<img src= "https://img.shields.io/badge/npm-1.0.9-blue">
+<img src= "https://img.shields.io/badge/tests-pass-green">
+
 
 ## Instalação
 
 ```sh
-npm install brazilianholiday --save
+npm install brazilianholiday
 ```
 
 ## Exemplo de Uso
@@ -13,8 +18,8 @@ npm install brazilianholiday --save
 ### isHoliday(date, uf = null)
 > Verifica se data é um feriado
 
-~~~javascript
-//PARÂMETROS
+~~~text
+//PARAMS
 
 date
 - required: true
@@ -24,7 +29,7 @@ date
 uf
 - required: false
 - type: string
-- format: 'XX'
+- format: 'DD/MM/YYYY'
 
 ~~~
 
@@ -54,14 +59,32 @@ console.log(brazilianHoliday.isHoliday(date, 'AC'));
     date: '20/01/2024' 
 }
 */
+~~~
 
+### all()
+> Retorna json completo de feriados.
+
+~~~javascript
+const {brazilianHoliday} = require('brazilianholiday');
+
+console.log(brazilianHoliday.all());
+/*
+{
+  moveable: [ Array ],
+  national: [ Array ],
+  state: [ Array ]
+}
+*/
 
 ~~~
 
 ## Histórico de Versões
 
+* 1.0.9 [ESTÁVEL]
+    * FEAT: function all and test
 * 1.0.8 [ESTÁVEL]
     * FEAT: function isHoliday
+    
 
 ## Como Contribuir
 
