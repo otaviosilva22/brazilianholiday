@@ -61,6 +61,20 @@ const verify = {
             description: holiday ? holiday.description : false,
             date        
         }
+    },
+
+    isCreatedHolidays(createdHolidays, date){
+        let holiday = createdHolidays.find(element => element.date == `${date.day}/${date.month}`);
+
+        if (holiday && holiday.moveable && holiday.year != date.year){
+            holiday = false;
+        }
+
+        return {
+            holiday: holiday ? true : false,
+            description: holiday ? holiday.description : false,
+            date
+        }
     }
 }
 
