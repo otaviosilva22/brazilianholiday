@@ -2,7 +2,7 @@ const {moveable, national, state} = require('./common/holidays.json')
 const {format} = require('./common/format');
 const {verify} = require('./functions/verifyHolidays');
 const {exception} = require('./common/exception');
-const createdHolidays = [];
+var createdHolidays = [];
 
 function isHoliday(date, uf = null){
     
@@ -39,10 +39,21 @@ function createHoliday(params){
             exception.UserException('Invalid params');
             throw exception
         }
+        let resultFormat = [];
         params.forEach((item)=> {
-            let resultFormat = format.formatParamsCreated(item);
-            createdHolidays.push(resultFormat);
+            resultFormat.push(format.formatParamsCreated(item));
         });
+        createdHolidays = [];
+        resultFormat.forEach((item)=> {
+            let holidayExists = createdHolidays.find(element => element && element.date == item.date);
+            if (holidayExists){
+                if (createdHolidays.find(element => element.year != item.year && item.moveable)){
+                    createdHolidays.push(item);
+                }
+            }else{
+                createdHolidays.push(item);
+            }
+        })
         return createdHolidays;
     }catch(e){
         throw {

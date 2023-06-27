@@ -112,6 +112,20 @@ describe("functions tests", () =>{
                 city: 'Passos',
                 description: 'Aniversário de Passos',
                 moveable: false
+            },
+            {
+                date: '06/08',
+                year: '2023',
+                city: 'Passos',
+                description: 'Dia de Bom Jesus dos Passos',
+                moveable: true
+            },
+            {
+                date: '06/08',
+                year: '2024',
+                city: 'Passos',
+                description: 'Dia de Bom Jesus dos Passos',
+                moveable: true
             }
         ]
         let result = verify.isCreatedHolidays(createdHolidays, date);
@@ -119,6 +133,20 @@ describe("functions tests", () =>{
         expect(result).toEqual({
             holiday: true,
             description: 'Aniversário de Passos',
+            date            
+        });
+
+        date = {
+            day: '06',
+            month: '08',
+            year: '2023'
+        }
+
+        let result_moveable = verify.isCreatedHolidays(createdHolidays, date);
+        
+        expect(result_moveable).toEqual({
+            holiday: true,
+            description: 'Dia de Bom Jesus dos Passos',
             date            
         });
     });

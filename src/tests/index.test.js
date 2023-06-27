@@ -2,10 +2,6 @@ const {brazilianHoliday} = require('../index');
 const {national, state, moveable} = require('../common/holidays.json');
 const {format} = require('../common/format');
 
-beforeAll(() => {
-    console.log('Initializing tests!');
-});
-
 describe("Index tests", () =>{
     it("Should return json holidays", ()=>{
         let result = brazilianHoliday.all();
@@ -27,15 +23,37 @@ describe("Index tests", () =>{
             expect(e).toEqual({error: 'Invalid params'});
         }
     });
-    it("Should return success to create holiday", ()=>{
+    it("Should return success to createHoliday with differents and equals holidays", ()=>{
         let params = [{
             date: '15/05/2023',
             description: 'Aniversário de Passos',
             city: 'Passos',
             uf: 'MG',
             moveable: false
+        },
+        {
+            date: '15/05/2023',
+            description: 'Aniversário de Passos',
+            city: 'Passos',
+            uf: 'MG',
+            moveable: false
+        },
+        {
+            date: '06/08/2023',
+            description: 'Dia de Bom Jesus dos Passos',
+            city: 'Passos',
+            uf: 'MG',
+            moveable: true
+        },
+        {
+            date: '06/08/2024',
+            description: 'Dia de Bom Jesus dos Passos',
+            city: 'Passos',
+            uf: 'MG',
+            moveable: true
         }]
         let result = brazilianHoliday.createHoliday(params);
+        
         expect(result).toEqual([{
             date: '15/05',
             year: '2023',
@@ -43,9 +61,26 @@ describe("Index tests", () =>{
             uf: 'MG',
             description: 'Aniversário de Passos',
             moveable: false
+        },
+        {
+            date: '06/08',
+            year: '2023',
+            city: 'Passos',
+            uf: 'MG',
+            description: 'Dia de Bom Jesus dos Passos',
+            moveable: true
+        },
+        {
+            date: '06/08',
+            year: '2024',
+            description: 'Dia de Bom Jesus dos Passos',
+            city: 'Passos',
+            uf: 'MG',
+            moveable: true
         }])
     });
-    it("Should return error to create holiday", ()=>{
+    
+    it("Should return error to createHoliday", ()=>{
         try{
             let params = [{
                 date: '15/05/202',
