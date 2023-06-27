@@ -3,7 +3,7 @@
 Simples biblioteca para verificação de feriado a partir de data recebida.
 
 <span><img src= "https://img.shields.io/badge/status-active-green">
-<img src= "https://img.shields.io/badge/npm-1.0.9-blue">
+<img src= "https://img.shields.io/badge/npm-2.0.1-blue">
 <img src= "https://img.shields.io/badge/tests-pass-green"></span>
 
 ## Instalação
@@ -12,9 +12,14 @@ Simples biblioteca para verificação de feriado a partir de data recebida.
 npm install brazilianholiday
 ```
 
-## Exemplo de Uso
+## Métodos
+<ul>
+<li> <a href='#isHoliday'>isHoliday</a></li>
+<li> <a href='#createHoliday'>createHoliday</a></li>
+<li> <a href='#all'>all</a></li>
+</ul>
 
-### isHoliday(date, uf = null)
+### <span id='isHoliday'>isHoliday(date, uf = null) </span>
 > Verifica se data é um feriado
 
 ~~~text
@@ -60,7 +65,83 @@ console.log(brazilianHoliday.isHoliday(date, 'AC'));
 */
 ~~~
 
-### all()
+### <span id='createHoliday'>createHoliday([objects])</span>
+>Possibilita a criação de feriados locais/municipais. 
+
+- Os feriados não são armazenados e cada requisição implica no <i>reset</i> daqueles já criados.
+
+- Quando existir a necessidade de novos feriados, a requisição createHoliday deve anteceder a consulta do método <a href='#isHoliday'>isHoliday</a>;
+
+- Desde a versão 2.0.1 (versão em que a função foi disponibilizada), os feriados criados não consideram o estado e a cidade para verificação feita pelo método isHoliday.
+
+- O método retorna um <i>array</i> de objetos que faz referência aos feriados criados.
+
+~~~text
+//PARAMS
+
+date
+- required: true
+- type: string
+- format: 'DD/MM/YYYY'
+
+uf
+- required: true
+- type: string
+- format: 'XX'
+
+city
+- required: true
+- type: string
+- format: 'XXXXXX'
+
+description
+- required: true
+- type: string
+- format: 'XXXXXX'
+
+uf
+- required: true
+- type: string
+- format: 'XXXXXX'
+
+moveable
+- required: false
+- type: boolean
+- format: true || false
+~~~
+
+~~~javascript
+const {brazilianHoliday} = require('brazilianholiday');
+
+brazilianHoliday.createHoliday([
+    {
+        date: '15/05/2023', 
+        city: 'Passos', 
+        uf: 'MG', 
+        description: 'Aniversário de Passos', 
+        moveable: false
+    },
+    {
+        date: '06/05/2023', 
+        city: 'Passos', 
+        uf: 'MG', 
+        description: 'Aniversário de Passos', 
+        moveable: false
+    }
+]);
+
+console.log(brazilianHoliday.isHoliday('15/05/2023'))
+/*
+{
+  holiday: true,
+  description: 'Aniversário de Passos',
+  date: '15/05/2023'
+}
+*/
+
+~~~
+
+### <span id='all'>all()</span>
 > Retorna json completo de feriados.
 
 ~~~javascript
@@ -79,9 +160,11 @@ console.log(brazilianHoliday.all());
 
 ## Histórico de Versões
 
-* 1.0.9 [ESTÁVEL]
+* 2.0.1 [STABLE]
+    * FEAT: function createHoliday
+* 1.0.9 [STABLE]
     * FEAT: function all and test
-* 1.0.8 [ESTÁVEL]
+* 1.0.8 [STABLE]
     * FEAT: function isHoliday
     
 

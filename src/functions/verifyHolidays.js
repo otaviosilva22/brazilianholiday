@@ -61,6 +61,37 @@ const verify = {
             description: holiday ? holiday.description : false,
             date        
         }
+    },
+
+    isCreatedHolidays(createdHolidays, date){
+        let filter_holiday = createdHolidays.filter(element => element.date == `${date.day}/${date.month}`);
+        let isHoliday = {
+            holiday: false,
+            description: false
+        }
+        for(let i=0;i<filter_holiday.length;i++){
+            if (filter_holiday[i].moveable) {
+                if (filter_holiday[i].year == date.year){
+                    isHoliday = {
+                        holiday: true,
+                        description: filter_holiday[i].description
+                    }
+                    break;
+                }                
+            }else{
+                isHoliday = {
+                    holiday: true,
+                    description: filter_holiday[i].description
+                }
+                break;
+            }
+        }
+
+        return {
+            holiday: isHoliday.holiday,
+            description: isHoliday.description,
+            date
+        }
     }
 }
 

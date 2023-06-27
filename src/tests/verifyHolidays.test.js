@@ -1,9 +1,4 @@
 const {verify} = require('../functions/verifyHolidays');
-
-beforeAll(() => {
-    console.log('Initializing tests!');
-});
-
 describe("functions tests", () =>{
     it("Should return year not found to isMoveable", ()=>{
         let date = {
@@ -97,6 +92,81 @@ describe("functions tests", () =>{
             year: '2023'
         }
         let result = verify.isNational(date);
+        expect(result).toEqual({
+            holiday: false,
+            description: false,
+            date            
+        });
+    });
+
+    it("Should return holiday to isHolidayCreated", async()=>{
+        let date = {
+            day: '15',
+            month: '05',
+            year: '2023'
+        }
+        let createdHolidays = [
+            {
+                date: '15/05',
+                year: '2023',
+                city: 'Passos',
+                description: 'Aniversário de Passos',
+                moveable: false
+            },
+            {
+                date: '06/08',
+                year: '2023',
+                city: 'Passos',
+                description: 'Dia de Bom Jesus dos Passos',
+                moveable: true
+            },
+            {
+                date: '06/08',
+                year: '2024',
+                city: 'Passos',
+                description: 'Dia de Bom Jesus dos Passos',
+                moveable: true
+            }
+        ]
+        let result = verify.isCreatedHolidays(createdHolidays, date);
+        
+        expect(result).toEqual({
+            holiday: true,
+            description: 'Aniversário de Passos',
+            date            
+        });
+
+        date = {
+            day: '06',
+            month: '08',
+            year: '2023'
+        }
+
+        let result_moveable = verify.isCreatedHolidays(createdHolidays, date);
+        
+        expect(result_moveable).toEqual({
+            holiday: true,
+            description: 'Dia de Bom Jesus dos Passos',
+            date            
+        });
+    });
+    it("Should return holiday to isHolidayCreated", async()=>{
+        let date = {
+            day: '15',
+            month: '05',
+            year: '2024'
+        }
+        let createdHolidays = [
+            {
+                date: '15/05',
+                year: '2023',
+                city: 'Passos',
+                description: 'Aniversário de Passos',
+                moveable: true
+            }
+        ]
+        let result = verify.isCreatedHolidays(createdHolidays, date);
+        
         expect(result).toEqual({
             holiday: false,
             description: false,

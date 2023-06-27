@@ -2,7 +2,6 @@ const {validator} = require('./validator');
 const {exception} = require('./exception');
 
 const format = {
-
     formatParams(date, uf){
 
         const resultValidate = validator.validate(date, uf);
@@ -25,8 +24,7 @@ const format = {
             year: year.toString()
         }
     },
-
-    formatResponse({responseNational, responseState, responseMoveable}, date){
+    formatResponse({responseNational, responseState, responseMoveable, responseCreatedHolidays}, date){
 
         let holiday = false, description = false;
         if (responseNational.holiday){
@@ -38,12 +36,36 @@ const format = {
         }else if(responseState.holiday){
             holiday = true,
             description = responseState.description;
+        }else if(responseCreatedHolidays.holiday){
+            holiday = true,
+            description = responseCreatedHolidays.description
         }
 
         return {
             holiday,
             description,
             date
+        }
+    },
+    formatParamsCreated({date, city, uf, description, moveable}){
+        const resultValidate = this.formatParams(date, uf);
+        
+        if (!city || !description){
+            exception.UserException('Invalid params');
+            throw exception
+        }
+
+        if (moveable == null){
+            moveable = false;
+        }
+
+        return {
+            date: `${resultValidate.day}/${resultValidate.month}`,
+            year: resultValidate.year,
+            city,
+            uf,
+            description,
+            moveable
         }
     }
 }
