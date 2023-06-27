@@ -68,11 +68,11 @@ console.log(brazilianHoliday.isHoliday(date, 'AC'));
 ### <span id='createHoliday'>createHoliday([objects])</span>
 >Possibilita a criação de feriados locais/municipais. 
 
-- Os feriados não são armazenados e cada requisição do método implica no <i>reset</i> daqueles já criados.
+- Os feriados não são armazenados e cada requisição implica no <i>reset</i> daqueles já criados.
 
-- Quando existir a necessidade de novos feriados, a requisição do método createHoliday deve anteceder a consulta do método <a href='#isHoliday'>isHoliday</a>;
+- Quando existir a necessidade de novos feriados, a requisição createHoliday deve anteceder a consulta do método <a href='#isHoliday'>isHoliday</a>;
 
-- Desde a versão 2.0.1 (versão em que a function foi disponibilizada), os feriados criados não consideram o estado e a cidade para verificação na chamada da isHoliday.
+- Desde a versão 2.0.1 (versão em que a função foi disponibilizada), os feriados criados não consideram o estado e a cidade para verificação feita pelo método isHoliday.
 
 - O método retorna um <i>array</i> de objetos que faz referência aos feriados criados.
 
