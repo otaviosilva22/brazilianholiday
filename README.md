@@ -48,7 +48,7 @@ console.log(brazilianHoliday.isHoliday(date));
 {
   holiday: true,
   description: 'Confraternização Universal',
-  date: '01/01/2024'
+  date: '01/01/2023'
 }
 */
 
@@ -60,7 +60,7 @@ console.log(brazilianHoliday.isHoliday(date, 'AC'));
 { 
     holiday: true, 
     description: 'Dia do Católico', 
-    date: '20/01/2024' 
+    date: '20/01/2023' 
 }
 */
 ~~~
@@ -122,10 +122,10 @@ brazilianHoliday.createHoliday([
         moveable: false
     },
     {
-        date: '06/05/2023', 
+        date: '06/08/2023', 
         city: 'Passos', 
         uf: 'MG', 
-        description: 'Aniversário de Passos', 
+        description: 'Dia de Bom Jesus dos Passos', 
         moveable: false
     }
 ]);
@@ -160,6 +160,8 @@ console.log(brazilianHoliday.all());
 
 ## Histórico de Versões
 
+* 2.0.2 [STABLE]
+    * FIX: readme documentation
 * 2.0.1 [STABLE]
     * FEAT: function createHoliday
 * 1.0.9 [STABLE]
