@@ -2,3 +2,4 @@ src/teste.js
 node_modules
 coverage
 package-lock.json
+src/tests
