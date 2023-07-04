@@ -160,7 +160,7 @@ console.log(brazilianHoliday.all());
 
 ## Histórico de Versões
 
-* 2.0.3 [STABLE]
+* 2.0.4 [STABLE]
     * FIX: tests
 * 2.0.3 [STABLE]
     * DOC: license file
