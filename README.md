@@ -3,7 +3,7 @@
 Simples biblioteca para verificação de feriado a partir de data recebida.
 
 <span><img src= "https://img.shields.io/badge/status-active-green">
-<img src= "https://img.shields.io/badge/npm-2.0.4-blue">
+<img src= "https://img.shields.io/badge/npm-2.0.5-blue">
 <img src= "https://img.shields.io/badge/tests-pass-green"></span>
 
 ## Instalação
@@ -68,11 +68,11 @@ console.log(brazilianHoliday.isHoliday(date, 'AC'));
 ### <span id='createHoliday'>createHoliday([objects])</span>
 >Possibilita a criação de feriados locais/municipais. 
 
-- Os feriados não são armazenados e cada requisição implica no <i>reset</i> daqueles já criados.
+- Os feriados não são armazenados em bancos e cada requisição implica no <i>reset</i> daqueles já criados.
 
 - Quando existir a necessidade de novos feriados, a requisição createHoliday deve anteceder a consulta do método <a href='#isHoliday'>isHoliday</a>;
 
-- Desde a versão 2.0.1 (versão em que a função foi disponibilizada), os feriados criados não consideram o estado e a cidade para verificação feita pelo método isHoliday.
+- Desde a versão 2.0.1 (versão em que a função foi disponibilizada), os feriados criados não consideram o estado e a cidade para verificação feita pelo método isHoliday, sendo apenas parâmetros obrigatórios de controle.
 
 - O método retorna um <i>array</i> de objetos que faz referência aos feriados criados.
 
@@ -152,7 +152,8 @@ console.log(brazilianHoliday.all());
 {
   moveable: [ Array ],
   national: [ Array ],
-  state: [ Array ]
+  state: [ Array ],
+  createdHolidays: [ Array ]
 }
 */
 
@@ -160,6 +161,8 @@ console.log(brazilianHoliday.all());
 
 ## Histórico de Versões
 
+* 2.0.5 [STABLE]
+    * DOC: readme file
 * 2.0.4 [STABLE]
     * FIX: tests
 * 2.0.3 [STABLE]
